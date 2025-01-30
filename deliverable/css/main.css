@@ -1,0 +1,128 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.topnav {
+  background-color: #82bdee;
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #111;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 26px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  color: #eee;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #266497;
+  color: #111;
+}
+
+/* Hide the icon that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/* Style for page content */
+.content {
+  padding: 14px;
+  font-size: 22px;
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
+
+/* When the screen is less than 900 pixels wide */
+@media screen and (max-width: 900px) {
+  /* Hide all links, except for the selected tab */
+  .topnav a:not(.active) {
+    display: none;
+  }
+
+  /* Show the icon that should open and close the topnav */
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* When the screen is less than 900 pixels wide, if the user clicks on the icon */
+/* the "responsive" class attribute will be added to the topnav by the JavaScript code */
+/* This media query sets the style for the unfolded topnav */
+/* It makes the topnav look good on small screens (display the links vertically instead of horizontally)  */
+@media screen and (max-width: 900px) {
+  .topnav.responsive {
+    /* changed to make the responsive topnav stay fixed at the top */
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* Zebra-striped table */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ababab;
+}
+
+td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Bold text for rank class */
+.rank {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* color of star ranking */
+.checked {
+  color: orange;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #f3f3f3;
+  position: fixed;
+  top: 48px; /* Adjust this value based on the height of your topnav */
+  z-index: 1;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #111;
+  width: 0%;
+}
